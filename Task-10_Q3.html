@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Music Player App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Player App</h1>
+
+        <!-- Add audio URL -->
+        <label for="audioUrl">Audio URL:</label>
+        <input type="text" id="audioUrl" class="form-control">
+        <button onclick="addAudio()">Add Audio</button>
+
+        <!-- Create Playlist -->
+        <label for="playlistName">Playlist Name:</label>
+        <input type="text" id="playlistName" class="form-control">
+        <button onclick="createPlaylist()">Create Playlist</button>
+
+        <!-- Add audio to Playlist -->
+        <label for="playlistSelect">Select Playlist:</label>
+        <select id="playlistSelect" class="form-control"></select>
+        <label for="audioSelect">Select Audio:</label>
+        <select id="audioSelect" class="form-control"></select>
+        <button onclick="addAudioToPlaylist()">Add to Playlist</button>
+
+        <!-- Search Audio and Playlist -->
+        <label for="audioSearch">Search Audio:</label>
+        <input type="text" id="audioSearch" class="form-control" oninput="searchAudio()">
+        <label for="playlistSearch">Search Playlist:</label>
+        <input type="text" id="playlistSearch" class="form-control" oninput="searchPlaylist()">
+
+        <!-- Ratings -->
+        <label for="rating">Give Rating (1-5):</label>
+        <input type="number" id="rating" class="form-control" min="1" max="5">
+        <button onclick="submitRating()">Submit Rating</button>
+
+        <!-- Display Average Rating -->
+        <div id="averageRating"></div>
+
+        <!-- Audio Player -->
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
